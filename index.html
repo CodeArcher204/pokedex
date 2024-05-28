@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokedex</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="./img/pokeball.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body onload="loadPokemonList()">
+        <div class="navbar">
+            <div class="max-width-1440 dp-flex-space-btwn">
+                <a href="#"><img src="./img/pokedex-logo.png" alt="Pokedex" /></a>
+                <div>
+                    <input required class="inputField" type="text" placeholder="Search Pokemon" id="searchInput" />
+                </div>
+            </div>
+        </div>
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <p id="loadingText" class="loadingText"></p>
+        </div>
+        <div id="pokemonList" class="pokemon-list max-width-1440"></div>
+        <div class="showMoreButton">
+            <button onclick="loadMorePokemon()">LOAD MORE</button>
+        </div>
+        <div id="pokemonOverlay" class="pokemon-overlay hidden">
+            <div class="overlay-content">
+                <span id="closeOverlay" class="close-overlay">&times;</span>
+                <div id="info-container" class="info-container"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
